@@ -17,6 +17,9 @@ builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = B
 builder.Services.AddMudServices();
 builder.Services.AddSingleton<ISalesInfoDataProvider, SalesInfoDataProvider>();
 
+builder.WebHost.UseWebRoot("wwwroot");
+builder.WebHost.UseStaticWebAssets();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
